@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        <button class="secondary-button">Take picture</button>
+        <button class="primary-button">Start reading</button>
     </div>
 </template>
 <style scoped>
