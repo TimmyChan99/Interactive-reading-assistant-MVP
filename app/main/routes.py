@@ -9,6 +9,10 @@ def index():
 
 @pages_bp.route('/parse-image', methods=['POST'])
 def parse_image():
-    # This route would handle the image parsing logic
-    data = request.json
-    return data, 200
+    if 'file' not in request.files:
+        return {'error': 'No file part'}, 400
+    file = request.files['file']
+    if file.filename == '':
+        return {'error': 'No selected file'}, 400
+    # For testing, just return the filename
+    return {'filename': file.filename}, 200
